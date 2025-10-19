@@ -3,22 +3,51 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title ? title : 'AFG Autosales & Services'}</title>
+
+    <!-- Dynamic SEO -->
+    <title>{title ? `${title} | AFG Autosales & Services` : 'AFG Autosales & Services - Expert Car Care'}</title>
+    <meta name="description" content={description || "AFG Autosales & Services offers expert car repairs, maintenance, and sales with over 45 years of trusted service."} />
+    <meta name="keywords" content="auto repair, car service, AFG Auto, maintenance, car sales, mechanic, Albany" />
+    <meta name="author" content="AFG Autosales & Services" />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content={title || "AFG Autosales & Services"} />
+    <meta property="og:description" content={description || "Reliable car repair and auto services with 45+ years experience."} />
+    <meta property="og:image" content={image || "/default-og-image.jpg"} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title || "AFG Autosales & Services"} />
+    <meta name="twitter:description" content={description || "Your trusted auto repair and sales experts."} />
+    <meta name="twitter:image" content={image || "/default-og-image.jpg"} />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Global CSS -->
     <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
   </head>
+
   <body class="bg-gray-100 text-gray-800">
     <Header />
-      <slot /> 
+    <main id="main-content" class="min-h-screen">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
