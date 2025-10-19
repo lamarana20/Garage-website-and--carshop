@@ -1,47 +1,41 @@
-# Astro Starter Kit: Basics
+# 🚗 Garage & Car Shop Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+[![Project Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/lamarana20/Garage-website-and--carshop.git)
+[![Astro](https://img.shields.io/badge/Astro-0.33.2-blue)](https://astro.build/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Welcome to the **Garage & Car Shop** project, a modern website built with **Astro** and **Tailwind CSS**. Users can browse available vehicles, book services, and contact the garage.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🔗 Project Link
+
+Check out the GitHub repository: [Garage & Car Shop](https://github.com/lamarana20/Garage-website-and--carshop.git)
+
+---
+
+## 🧱 Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/                
+│   ├── favicon.svg
+│   └── images/           # Garage and vehicle images
+├── src/
+│   ├── assets/           
+│   │   └── astro.svg
+│   ├── components/       
+│   │   ├── Welcome.astro
+│   │   ├── About.astro
+│   │   ├── Hero.astro
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   ├── Service.astro
+│   │   └── Contact.astro
+│   ├── layouts/          
+│   │   └── Layout.astro
+│   └── pages/            
+│       ├── index.astro
+│       └── Inventory.astro  <-- Main vehicle listing
+├── vehicles.json         # Vehicle data source
 └── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# Garage-website-and--carshop
