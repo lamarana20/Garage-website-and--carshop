@@ -1,4 +1,4 @@
-# 🚗 Garage & Car Shop Website
+#  Garage & Car Shop Website
 
 [![Project Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/lamarana20/Garage-website-and--carshop.git)
 [![Astro](https://img.shields.io/badge/Astro-0.33.2-blue)](https://astro.build/)
@@ -14,7 +14,7 @@ Check out the GitHub repository: [Garage & Car Shop](https://github.com/lamarana
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 
 ```text
 /
