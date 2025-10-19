@@ -1,0 +1,128 @@
+<section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-red-100 rounded-full filter blur-3xl opacity-20"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20"></div>
+  
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left side - Video -->
+      <div class="relative group">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+        <div class="relative bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
+          <video 
+            class="w-full h-auto aspect-video object-cover"
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            poster="/placeholder-video.jpg"
+          >
+            <source src="/garage-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          <!-- Video overlay badge -->
+          <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-lg">
+            <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+            <span class="text-sm font-bold text-gray-900">45+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right side - Content -->
+      <div class="space-y-8">
+        <!-- Header -->
+        <div>
+          <span class="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-4">
+            About Us
+          </span>
+          <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            Welcome to <span class="text-red-600">AFG Auto</span>
+          </h2>
+          <p class="text-xl text-gray-600 font-semibold mb-6">
+            We help more than 45 years serving customer cars
+          </p>
+        </div>
+        
+        <!-- Description -->
+        <p class="text-gray-700 leading-relaxed">
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+        </p>
+        
+        <!-- Mission, Vision, Values Tabs -->
+        <div class="space-y-4">
+          <!-- Mission -->
+          <details class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden" open>
+            <summary class="cursor-pointer p-6 font-bold text-lg text-gray-900 flex items-center justify-between hover:text-red-600 transition-colors">
+              <span class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-600 transition-colors">
+                  <svg class="w-5 h-5 text-red-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                </div>
+                Our Mission
+              </span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            </div>
+          </details>
+          
+          <!-- Vision -->
+          <details class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden">
+            <summary class="cursor-pointer p-6 font-bold text-lg text-gray-900 flex items-center justify-between hover:text-red-600 transition-colors">
+              <span class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                  <svg class="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                </div>
+                Our Vision
+              </span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            </div>
+          </details>
+          
+          <!-- Values -->
+          <details class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden">
+            <summary class="cursor-pointer p-6 font-bold text-lg text-gray-900 flex items-center justify-between hover:text-red-600 transition-colors">
+              <span class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
+                  <svg class="w-5 h-5 text-emerald-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                  </svg>
+                </div>
+                Our Values
+              </span>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            </div>
+          </details>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="pt-4">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-red-500/50">
+            Learn More About Us
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

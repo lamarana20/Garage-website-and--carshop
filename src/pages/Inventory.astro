@@ -1,0 +1,346 @@
+---
+import Layout from "../layouts/Layout.astro"; 
+// Assuming the vehicles.json file is located in the root of your project or accessible via this path
+import vehiclesData from "../..//vehicles.json"; 
+
+// Prepare the data for use in the client-side script
+const clientVehiclesData = vehiclesData.vehicles.map(vehicle => ({
+  id: vehicle.id,
+  name: vehicle.name,
+  year: vehicle.year,
+  mileage: vehicle.mileage,
+  price: vehicle.price,
+  category: vehicle.category,
+  status: vehicle.status,
+  statusText: vehicle.statusText,
+  statusColor: vehicle.statusColor,
+  transmission: vehicle.transmission,
+  seats: vehicle.seats,
+  warranty: vehicle.warranty,
+  fuel: vehicle.fuel,
+  description: vehicle.description,
+  images: vehicle.images
+}));
+---
+
+<Layout>
+
+<section id="inventory" class="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full filter blur-3xl opacity-30"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-30"></div>
+  
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-4">
+        Available Now
+      </span>
+      <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+        Featured <span class="text-red-600">Inventory</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Quality pre-owned vehicles with full inspection reports and warranties
+      </p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button class="filter-btn active px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all" data-filter="all">
+        All Vehicles
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-red-600 hover:text-red-600 transition-all" data-filter="sedan">
+        Sedans
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-red-600 hover:text-red-600 transition-all" data-filter="suv">
+        SUVs
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-red-600 hover:text-red-600 transition-all" data-filter="truck">
+        Trucks
+      </button>
+    </div>
+    
+    <div id="inventory-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {vehiclesData.vehicles.map((vehicle) => (
+        <div class={`car-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group`} data-category={vehicle.category}>
+          <div class="relative h-64 overflow-hidden">
+            <img src={vehicle.images[0]} alt={vehicle.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class={`absolute top-4 right-4 ${vehicle.statusColor} text-white px-3 py-1 rounded-full text-xs font-bold`}>
+              {vehicle.statusText}
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">{vehicle.name}</h3>
+                <p class="text-gray-600 text-sm">{vehicle.year} • {vehicle.mileage.toLocaleString()} miles</p>
+              </div>
+              <div class="text-right">
+                <p class="text-2xl font-black text-red-600">${vehicle.price.toLocaleString()}</p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-3 mb-4 py-4 border-t border-b border-gray-100">
+              <div class="text-center">
+                <svg class="w-5 h-5 mx-auto mb-1 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <p class="text-xs text-gray-600 font-semibold">{vehicle.transmission}</p>
+              </div>
+              <div class="text-center">
+                <svg class="w-5 h-5 mx-auto mb-1 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-600 font-semibold">{vehicle.seats}</p>
+              </div>
+              <div class="text-center">
+                <svg class="w-5 h-5 mx-auto mb-1 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <p class="text-xs text-gray-600 font-semibold">Warranty</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-3">
+              <button class="view-details-btn flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all text-center text-sm" data-id={vehicle.id}>
+                View Details
+              </button>
+              <a href="#contact" class="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all flex items-center justify-center">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-red-600 transition-colors shadow-lg">
+        View All Inventory
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Vehicle Details Modal -->
+<div id="vehicle-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="p-6">
+      <div class="flex justify-between items-start mb-6">
+        <h3 id="modal-title" class="text-3xl font-bold text-gray-900"></h3>
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-xl mb-4">
+          <div class="grid grid-cols-3 gap-4">
+            <img id="modal-image-1" src="" alt="" class="h-24 object-cover rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+            <img id="modal-image-2" src="" alt="" class="h-24 object-cover rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+            <img id="modal-image-3" src="" alt="" class="h-24 object-cover rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+        
+        <div>
+          <div class="mb-6">
+            <p id="modal-price" class="text-3xl font-black text-red-600 mb-2"></p>
+            <p id="modal-details" class="text-gray-600 mb-4"></p>
+            <div class="flex items-center gap-2 mb-4">
+              <span id="modal-status" class="px-3 py-1 rounded-full text-xs font-bold text-white"></span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <!-- Transmission -->
+            <div class="text-center p-3 bg-gray-50 rounded-lg">
+              <svg class="w-6 h-6 mx-auto mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <p class="text-sm font-semibold text-gray-700">Transmission</p>
+              <p id="modal-transmission" class="text-xs text-gray-600"></p>
+            </div>
+            <!-- Seats -->
+            <div class="text-center p-3 bg-gray-50 rounded-lg">
+              <svg class="w-6 h-6 mx-auto mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              <p class="text-sm font-semibold text-gray-700">Seats</p>
+              <p id="modal-seats" class="text-xs text-gray-600"></p>
+            </div>
+            <!-- Warranty -->
+            <div class="text-center p-3 bg-gray-50 rounded-lg">
+              <svg class="w-6 h-6 mx-auto mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <p class="text-sm font-semibold text-gray-700">Warranty</p>
+              <p id="modal-warranty" class="text-xs text-gray-600"></p>
+            </div>
+            <!-- Fuel -->
+            <div class="text-center p-3 bg-gray-50 rounded-lg">
+              <svg class="w-6 h-6 mx-auto mb-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="text-sm font-semibold text-gray-700">Fuel Type</p>
+              <p id="modal-fuel" class="text-xs text-gray-600"></p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="font-bold text-gray-900 mb-2">Description</h4>
+            <p id="modal-description" class="text-gray-600 text-sm"></p>
+          </div>
+          
+          <div class="flex gap-3">
+            <a href="#contact" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all text-center">
+              Contact Us
+            </a>
+            <a  href="#contact" class="flex-1 bg-gray-900 hover:bg-red-600 text-white font-bold py-3 rounded-lg transition-all text-center schedule-test-drive-btn">
+              Schedule Test Drive
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ clientVehiclesData }}>
+  // Client-side data now passed via define:vars
+  const vehiclesData = {
+    vehicles: clientVehiclesData
+  };
+
+  // Initialize event listeners when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    initEventListeners();
+  });
+
+  function initEventListeners() {
+    // Filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const carCards = document.querySelectorAll('.car-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Reset all buttons
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-red-600', 'text-white');
+          b.classList.add('bg-white', 'border-2', 'border-gray-200', 'text-gray-700');
+          b.classList.remove('hover:border-red-600', 'hover:text-red-600');
+          b.classList.add('hover:border-red-600', 'hover:text-red-600');
+        });
+        
+        // Activate clicked button
+        btn.classList.add('active', 'bg-red-600', 'text-white');
+        btn.classList.remove('bg-white', 'border-2', 'border-gray-200', 'text-gray-700', 'hover:border-red-600', 'hover:text-red-600');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        // Show/hide vehicle cards based on filter
+        carCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'grid';
+          } else {
+            if (card.getAttribute('data-category') === filter) {
+              card.style.display = 'grid';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+    
+    // Detail buttons
+    document.querySelectorAll('.view-details-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const vehicleId = parseInt(btn.getAttribute('data-id'));
+        showVehicleDetails(vehicleId);
+      });
+    });
+    
+    // Close modal
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('vehicle-modal').classList.add('hidden');
+    });
+    
+    // Schedule test drive button
+    document.querySelector('.schedule-test-drive-btn').addEventListener('click', () => {
+      const vehicleName = document.getElementById('modal-title').textContent;
+      alert(`Test drive scheduled for ${vehicleName}! We'll contact you soon.`);
+      document.getElementById('vehicle-modal').classList.add('hidden');
+    });
+    
+    // Change main modal image when clicking thumbnails
+    document.querySelectorAll('#modal-image-1, #modal-image-2, #modal-image-3').forEach((img, index) => {
+      img.addEventListener('click', () => {
+        const mainImage = document.getElementById('modal-image');
+        const vehicleId = parseInt(mainImage.getAttribute('data-id')); 
+        const vehicle = vehiclesData.vehicles.find(v => v.id === vehicleId);
+        
+        if (vehicle && vehicle.images[index]) {
+          mainImage.src = vehicle.images[index];
+          
+          // Reset all thumbnail opacity
+          document.querySelectorAll('#modal-image-1, #modal-image-2, #modal-image-3').forEach(thumb => {
+            thumb.classList.add('opacity-70');
+            thumb.classList.remove('opacity-100');
+          });
+          
+          // Highlight selected thumbnail
+          img.classList.remove('opacity-70');
+          img.classList.add('opacity-100');
+        }
+      });
+    });
+  }
+
+  // Show vehicle details in modal
+  function showVehicleDetails(vehicleId) {
+    const vehicle = vehiclesData.vehicles.find(v => v.id === vehicleId);
+    if (!vehicle) return;
+    
+    document.getElementById('modal-title').textContent = vehicle.name;
+    document.getElementById('modal-price').textContent = `$${vehicle.price.toLocaleString()}`;
+    document.getElementById('modal-details').textContent = `${vehicle.year} • ${vehicle.mileage.toLocaleString()} miles`;
+    document.getElementById('modal-status').textContent = vehicle.statusText;
+    document.getElementById('modal-status').className = `px-3 py-1 rounded-full text-xs font-bold text-white ${vehicle.statusColor}`;
+    document.getElementById('modal-transmission').textContent = vehicle.transmission;
+    document.getElementById('modal-seats').textContent = vehicle.seats;
+    document.getElementById('modal-warranty').textContent = vehicle.warranty;
+    document.getElementById('modal-fuel').textContent = vehicle.fuel;
+    document.getElementById('modal-description').textContent = vehicle.description;
+    
+    // Images
+    const mainImage = document.getElementById('modal-image');
+    mainImage.src = vehicle.images[0];
+    mainImage.setAttribute('data-id', vehicle.id); // Store ID for thumbnail logic
+    
+    const thumbnail1 = document.getElementById('modal-image-1');
+    const thumbnail2 = document.getElementById('modal-image-2');
+    const thumbnail3 = document.getElementById('modal-image-3');
+    
+    thumbnail1.src = vehicle.images[0];
+    thumbnail2.src = vehicle.images[1] || vehicle.images[0];
+    thumbnail3.src = vehicle.images[2] || vehicle.images[0];
+    
+    // Set initial thumbnail opacity
+    document.querySelectorAll('#modal-image-1, #modal-image-2, #modal-image-3').forEach(img => {
+      img.classList.add('opacity-70');
+      img.classList.remove('opacity-100');
+    });
+    thumbnail1.classList.remove('opacity-70');
+    thumbnail1.classList.add('opacity-100');
+    
+    // Show modal
+    document.getElementById('vehicle-modal').classList.remove('hidden');
+  }
+</script>
+</Layout>

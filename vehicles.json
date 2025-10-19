@@ -1,0 +1,110 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Honda Accord",
+      "year": 2020,
+      "mileage": 35000,
+      "price": 18500,
+      "category": "sedan",
+      "status": "available",
+      "statusText": "Available",
+      "statusColor": "bg-green-500",
+      "transmission": "Automatic",
+      "seats": "5 Seats",
+      "warranty": "2 Years",
+      "fuel": "Gasoline",
+      "description": "This well-maintained Honda Accord offers excellent fuel efficiency and a comfortable ride. Features include Bluetooth connectivity, backup camera, and leather interior.",
+      "images": [
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Toyota RAV4",
+      "year": 2021,
+      "mileage": 28000,
+      "price": 26900,
+      "category": "suv",
+      "status": "available",
+      "statusText": "Available",
+      "statusColor": "bg-green-500",
+      "transmission": "Automatic",
+      "seats": "7 Seats",
+      "warranty": "3 Years",
+      "fuel": "Hybrid",
+      "description": "The Toyota RAV4 Hybrid combines efficiency with SUV capability. This model includes advanced safety features, Apple CarPlay, and all-wheel drive.",
+      "images": [
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    
+    {
+      "id": 4,
+      "name": "Nissan Altima",
+      "year": 2021,
+      "mileage": 22000,
+      "price": 21800,
+      "category": "sedan",
+      "status": "available",
+      "statusText": "Available",
+      "statusColor": "bg-green-500",
+      "transmission": "Automatic",
+      "seats": "5 Seats",
+      "warranty": "2 Years",
+      "fuel": "Gasoline",
+      "description": "The Nissan Altima offers a smooth ride with excellent fuel economy. This model includes ProPILOT Assist, premium audio, and heated seats.",
+      "images": [
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jeep Cherokee",
+      "year": 2020,
+      "mileage": 31000,
+      "price": 24900,
+      "category": "suv",
+      "status": "hot",
+      "statusText": "Hot Deal",
+      "statusColor": "bg-red-500",
+      "transmission": "Automatic",
+      "seats": "5 Seats",
+      "warranty": "2 Years",
+      "fuel": "Gasoline",
+      "description": "This Jeep Cherokee combines rugged capability with modern comfort. Features include 4WD, Uconnect system, and premium interior.",
+      "images": [
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Chevy Silverado",
+      "year": 2020,
+      "mileage": 38000,
+      "price": 29900,
+      "category": "truck",
+      "status": "available",
+      "statusText": "Available",
+      "statusColor": "bg-green-500",
+      "transmission": "Automatic",
+      "seats": "6 Seats",
+      "warranty": "2 Years",
+      "fuel": "Diesel",
+      "description": "The Chevy Silverado offers powerful performance with impressive towing capacity. This model includes advanced trailering technology and comfortable interior.",
+      "images": [
+        "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1563720223485-239d09506c33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      ]
+    }
+  ]
+}
