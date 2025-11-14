@@ -11,7 +11,7 @@ Welcome to the **Garage & Car Shop** project, a modern website built with **Astr
 
 ## 🔗 Project Link
 
-Check out the GitHub repository: [Garage & Car Shop](https://github.com/lamarana20/Garage-website-and--carshop.git)
+Check out the Live: [Garage & Car Shop](https://cool-mandazi-c87d8a.netlify.app/)
 
 ---
 
