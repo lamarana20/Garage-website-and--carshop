@@ -1,4 +1,5 @@
 #  Garage & Car Shop Website
+![Preview](./public/garage-auto.png)
 
 [![Project Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/lamarana20/Garage-website-and--carshop.git)
 [![Astro](https://img.shields.io/badge/Astro-0.33.2-blue)](https://astro.build/)
